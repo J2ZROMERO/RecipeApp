@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "foods/show", type: :view do
+RSpec.describe 'foods/show', type: :view do
   before(:each) do
     @food = assign(:food, Food.create!(
-      name: "Name",
-      measurement: "Measurement",
-      price: "9.99",
-      quantity: 2,
-      user_id: 3
-    ))
+                            name: 'Name',
+                            measurement: 'Measurement',
+                            price: '9.99',
+                            quantity: 2,
+                            user_id: 3
+                          ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Measurement/)
