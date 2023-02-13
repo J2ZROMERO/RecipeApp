@@ -27,10 +27,7 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b> RECIPE APP 🧁 (Ruby on Rails)</b></h3>
 
 </div>
 
@@ -60,17 +57,18 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 RECIPE APP 🧁 <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> Our Recipe App is now fresh out of the oven! Don't forget how to cook that special meal, now you can save it in this APP!
 
-**[your_project__name]** is a...
+**RECIPE APP 🧁** is an APP made with Ruby on Rails. Taste it!
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With <a name="built-with">Ruby on Rails</a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> Front-end/ Back-end : Ruby on Rails
+> Database: Postgre (SQL)
 
 <details>
   <summary>Client</summary>
@@ -99,9 +97,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[ Create your Recipes! ]**
+- **[ Create your ingredients Inventory! ]**
+- **[ Create your Shopping List! ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,9 +107,8 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Coming Soon!
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,83 +116,126 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
-To get a local copy up and running, follow these steps.
+> To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
+> Install a text-editor you prefer. [Code editors](https://desarrolloweb.com/colecciones/editores-codigo).
 
-```sh
- gem install rails
-```
- -->
+> You need a database
+- [SQLlite](https://www.sqlite.org/index.html)
+- [MySQL](https://www.mysql.com/)
+- [Postgresql](https://www.postgresql.org/)
+
+> [Ruby](https://www.ruby-lang.org/en/downloads/)
+
+
+> [Ruby on Rails Framework](https://rubyonrails.org/)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
+> You must have an account on git hub. [Git Hub](https://github.com/)
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+> You must have installed git in your local environment. [Git](https://git-scm.com/download/win)
+
+> If you just want to take a look quickly, make a fork and open the project in the web browser by adding ".dev" instead of ."com" in the repo link.
+- Example : https://github.dev/J2ZROMERO/RecipeApp
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
+Execute the bundle in your terminal with the path of 
+the directory.
 
-```sh
-  cd my-project
-  gem install
-```
---->
+> Execute "rails bundle" in your terminal with the specific path in order to add all the gems.
+
+> You have to change the data bases' crentials.
+
+> When the project si already installed execute:
+ - rake db:setup or rails db:setup
+    - Once this in being executed the nexts actions are generated 
+    - rake db:create
+    - rake db:schema:load
+    - rake db:seed
+
+> If you already have  the project in your local you can pull the lastes commit and execute the next commands:
+  - rails db:reset
+  - rails db:migrate:reset
+  - rails db:seed
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
+- Once your credential is ready execute
+> Ruby bin/rails db:setup
 
-```sh
-  rails server
-```
---->
+- After db:setup is executed the file seed.rb is going to execute immediately this will add prepared data to your database, and you can test the customized methods from models.
+
+- After that execute:
+> Ruby bin/rails db:migrate
+
+- This command will ensure to load the models to tests it.
+
+- You must be sign in to execute de create comment.
+  
+- shows all the users
+  http://localhost:3000/api/user/
+
+- shows all the post by the given user
+  http://localhost:3000/api/user/1
+
+- show the post selected 
+  http://localhost:3000/api/user/1/post/7
+
+- show all comments by the given post
+  http://localhost:3000/api/user/1/post/7/comment
+
+- You can add a new comment to the post
+  http://localhost:3000/api/user/1/post/7/comment
+
+  POST /api/user/1/post/7/comment
+  {
+    "text": "Este es mi comentario"
+    "post_id": "7"
+  }
+
+
 
 ### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
+- To run the tests please follow the next instruccions.
+> The gem database_cleaner let us clean all the database before execute the test (:warning This gem only works for test and don't allow any input to the original data base), to use this gem is necesary to add some characteristics to the rails_helper.rb
+- Add the next gem : gem 'database_cleaner' to the Gemfile
+- Execute: bundle install.
+- Ruby bin/rails db:migrate RAILS_ENV=test 
+  - The code above will ensure to prepare the modules for tests.
+- Execute: [ rspec ] if you wan to see all the tests working.
+- or execute rspec spec/models/NAME-OF-THE-MODEL_spec.rb  if you want to run a especific file.
+- If you want to see the tests existing and their definitions please run: " rspec --force-color --format documentation "
+- To check the tests's controllers please execute the next command on your root project console: "" rspec spec/requests/ ""  you will see all the tests' controllers in execution.
+- In order to see Capybara tests you can execute:
+  " rspec spec/interfaces" all the tests.
+  " rspec spec/interfaces/show_posts_spec.rb " single file.
 ### Deployment
 
 You can deploy this project using:
 
-<!--
-Example:
+> Ruby bin/rails server
+- Go to your browser in the next directions to interact with the apps.
+> http://localhost:3000/ 
+> http://localhost:3000/user/745/
+> http://localhost:3000/user/745/post/ 
+> http://localhost:3000/user/745/post/3
 
-```sh
-
-```
- -->
+- You can change the id's [745 / 3] for another one available on the interfaz.
+- The seed file has 3 users with their passwords and emails you can acces with some of the credencials in there, just take a look at those queries in the seed file or log in with your data.
+- The Photo field must be an URL like = "https://this_is_myptoho.jpg"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,17 +245,16 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+**JOSE ZEPEDA**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [J2ZROMERO](https://github.com/J2ZROMERO)
+- Twitter: [@JOSEZEPED4](https://twitter.com/JOSEZEPED4)
+- LinkedIn: [JOSE ZEPEDA](https://www.linkedin.com/in/jose-zepeda-733ab91ab/)
 
-👤 **Author2**
+👤 **LUCAS BERMUDEZ**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Oklukeok](https://github.com/Oklukeok)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,9 +264,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[ Blog ]**
+- [ ] **[ Sharing recipes with other users ]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -245,9 +284,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project hit the ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -255,25 +292,12 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+“A recipe has no soul. You as the cook must bring soul to the recipe.”
+– Thomas Keller
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
