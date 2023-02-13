@@ -57,11 +57,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [RECIPE APP 🧁] <a name="about-project"></a>
+# 📖 RECIPE APP 🧁 <a name="about-project"></a>
 
 > Our Recipe App is now fresh out of the oven! Don't forget how to cook that special meal, now you can save it in this APP!
 
-**[RECIPE APP 🧁]** is an APP made with Ruby on Rails. Taste it!
+**RECIPE APP 🧁** is an APP made with Ruby on Rails. Taste it!
 
 ## 🛠 Built With <a name="built-with">Ruby on Rails</a>
 
@@ -97,9 +97,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[Create your Recipes!]**
-- **[Create your ingredients Inventory!]**
-- **[Create your Shopping List!]**
+- **[ Create your Recipes! ]**
+- **[ Create your ingredients Inventory! ]**
+- **[ Create your Shopping List! ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -264,8 +264,8 @@ You can deploy this project using:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[Blog]**
-- [ ] **[Sharing with other users]**
+- [ ] **[ Blog ]**
+- [ ] **[ Sharing recipes with other users ]**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
