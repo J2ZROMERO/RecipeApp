@@ -9,6 +9,21 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# linters
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# For tests
+gem 'rails-controller-testing'
+
+# Authentication.
+gem 'devise'
+
+# For tests
+gem 'rspec-rails', '~> 4.0.0'
+
+# Clean database before execution.
+gem 'database_cleaner'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
