@@ -73,14 +73,14 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://https://code.visualstudio.com//">Visual Studio Code</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
   </ul>
 </details>
 
@@ -97,18 +97,18 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[ Create your Recipes! ]**
-- **[ Create your ingredients Inventory! ]**
-- **[ Create your Shopping List! ]**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Coming Soon!
+> You can see the deployment once it is executed in the next link.
 
+- [rails server](https://127.0.0.1:3000/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -264,8 +264,8 @@ You can deploy this project using:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[ Blog ]**
-- [ ] **[ Sharing recipes with other users ]**
+- [ ] ** Blog **
+- [ ] ** Sharing recipes with other users **
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
