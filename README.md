@@ -35,25 +35,25 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 RECIPE APP 🧁 ](#-recipe-app--)
+  - [🛠 Built With Ruby on Rails](#-built-with-ruby-on-rails)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -182,29 +182,6 @@ To run the project, execute the following command:
 
 - This command will ensure to load the models to tests it.
 
-- You must be sign in to execute de create comment.
-  
-- shows all the users
-  http://localhost:3000/api/user/
-
-- shows all the post by the given user
-  http://localhost:3000/api/user/1
-
-- show the post selected 
-  http://localhost:3000/api/user/1/post/7
-
-- show all comments by the given post
-  http://localhost:3000/api/user/1/post/7/comment
-
-- You can add a new comment to the post
-  http://localhost:3000/api/user/1/post/7/comment
-
-  POST /api/user/1/post/7/comment
-  {
-    "text": "Este es mi comentario"
-    "post_id": "7"
-  }
-
 
 
 ### Run tests
@@ -221,7 +198,7 @@ To run the project, execute the following command:
 - To check the tests's controllers please execute the next command on your root project console: "" rspec spec/requests/ ""  you will see all the tests' controllers in execution.
 - In order to see Capybara tests you can execute:
   " rspec spec/interfaces" all the tests.
-  " rspec spec/interfaces/show_posts_spec.rb " single file.
+  " rspec spec/interfaces/file.rb " single file.
 ### Deployment
 
 You can deploy this project using:
@@ -229,13 +206,6 @@ You can deploy this project using:
 > Ruby bin/rails server
 - Go to your browser in the next directions to interact with the apps.
 > http://localhost:3000/ 
-> http://localhost:3000/user/745/
-> http://localhost:3000/user/745/post/ 
-> http://localhost:3000/user/745/post/3
-
-- You can change the id's [745 / 3] for another one available on the interfaz.
-- The seed file has 3 users with their passwords and emails you can acces with some of the credencials in there, just take a look at those queries in the seed file or log in with your data.
-- The Photo field must be an URL like = "https://this_is_myptoho.jpg"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
