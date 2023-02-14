@@ -8,8 +8,8 @@ RSpec.describe RecipeFood, type: :model do
   describe 'When the user model is tested' do
     it 'validates the name of the food' do
       @first_recipe.quantity = '250g'
-    
-        expect(@first_recipe.quantity).to eq '250g'
+
+      expect(@first_recipe.quantity).to eq '250g'
     end
   end
 end
