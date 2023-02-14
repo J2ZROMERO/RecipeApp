@@ -14,17 +14,16 @@
  *= require_self
  */
 .foods-index {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 .foods_newButton {
-    width: 10%;
-    background-color: aqua;
-    align-self: flex-end;
+  background-color: aqua;
+  align-self: flex-end;
+  width: auto;
 }
-.foods_newButton {
-    width: auto;
-}
+
 table {
-    border: 2px solid black;
+  border: 2px solid black;
 }
