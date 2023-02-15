@@ -1,14 +1,30 @@
 <p style="color: green"><%= notice %></p>
-
+  
+<section class="foods-index">
 <h1>Foods</h1>
+<button class="foods_newButton"><%= link_to "Add new food", new_food_path %></button>
 
-<div id="foods">
+<div id="foods_table">
+  <table>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Measurement Unit</strong></td>
+      <td><strong>Price</strong></td>
+      <td><strong>Quantity</strong></td>
+      <td><strong>Actions</strong>
+     
+
+    </tr>  
+    
   <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+     <%= render food %>
   <% end %>
+  
+  </table>  
+
+
+
 </div>
 
-<%= link_to "New food", new_food_path %>
+
+</section>
