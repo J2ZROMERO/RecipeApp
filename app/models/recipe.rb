@@ -4,5 +4,4 @@ class Recipe < ApplicationRecord
 
   validates :name, length: { maximum: 100 }, presence: true
   validates :public, presence: true
-
 end
