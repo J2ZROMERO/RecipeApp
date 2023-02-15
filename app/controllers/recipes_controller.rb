@@ -3,11 +3,17 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    # return unless user_signed_in?
+
+    # @current_user = current_user
+
+    @recipes = Recipe.where(user_id: 4)
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+#   def show
+    
+# end
 
   # GET /recipes/new
   def new
@@ -19,7 +25,9 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+
+
+    @recipe = Recipe.new(recipe_params.merge(user_id: 4))
 
     respond_to do |format|
       if @recipe.save
@@ -34,15 +42,15 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
-    respond_to do |format|
-      if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
-        format.json { render :show, status: :ok, location: @recipe }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @recipe.update(recipe_params)
+    #     format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @recipe }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @recipe.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /recipes/1 or /recipes/1.json
@@ -64,6 +72,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end
