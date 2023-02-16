@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+  
+
+<h1>Public Recipes</h1>
+
+ <% @public_recipes.each do |public_recipes| %>
+   <% if public_recipes.public == true %>
+   <div class="public_recipe">
+     <h3><%= public_recipes.name %></h3>
+     <h4>User Id:<%= public_recipes.user_id%></h4>
+   </div>
+     <%end%>
+  <% end %>
