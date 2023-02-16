@@ -4,10 +4,90 @@
     <%= recipe.name %>
   </p>
 
+
+  <p>
+    <strong> Preparation time: <%= recipe.preparation_time %> hour</strong>
+  </p>
+
+  <p>
+  <strong> Cooking time: <%= recipe.cooking_time %> hours</strong>
+</p>
+
+
+
+<p>
+  <strong> Cooking time:  <%= recipe.cooking_time %> hours</strong>
+</p>
+
+
+<p>
+  <strong> Public:
+   <% @ispublic = recipe.public %>
+   <% if @ispublic == 'true' %>
+   <input type="checkbox"  name="example" id="example" data-toggle="switch" data-on-color="primary" data-off-color="default">
+
+   <% else %>
+   <input type="checkbox" checked name="example" id="example" data-toggle="switch" data-on-color="primary" data-off-color="default">
+    <% end%>
+   
+   
+   hours</strong>
+</p>
+
+
   <p>
     <strong>Description: </strong>
     <%= recipe.description %>
   </p>
-
+  <%= button_to "Add ingredient", add_ingredient_recipe_path(recipe), method: :get %>
   
+<%if @activo == true%>
+<div id="foods_table">
+  <table>
+    <tr>
+      <td><strong>Name</strong></td>
+      <td><strong>Measurement Unit</strong></td>
+      <td><strong>Price</strong></td>
+      <td><strong>Quantity</strong></td>
+      <td><strong>Actions</strong>
+     
+      
+      </tr>  
+      
+      <% @foods.each do |food| %>
+        <%= render food %>
+     <% end %>
+           
+      </table>  
+      
+      </div>
+      
+<% else %>
+
+<% end %>
+
+
+<div id="foods_table">
+<table>
+<tr>
+<td><strong>Name</strong></td>
+<td><strong>Measurement Unit</strong></td>
+<td><strong>Price</strong></td>
+<td><strong>Quantity</strong></td>
+<td><strong>Actions</strong>
+
+
+</tr>  
+
+</table>  
+
+
+
 </div>
+</div>
+
+<%if @activo == true%>
+<%= link_to "Back to recipes", recipes_path %>
+
+<% else %>
+<% end %>

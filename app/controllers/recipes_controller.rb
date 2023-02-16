@@ -15,6 +15,15 @@ class RecipesController < ApplicationController
     
 # end
 
+def add_ingredient
+    @activo = true
+    @foods = Food.all
+    @recipe = Recipe.find(params[:id])
+   render partial: 'recipe_custom', locals: {recipe: @recipe}
+
+end
+
+
   # GET /recipes/new
   def new
     @recipe = Recipe.new

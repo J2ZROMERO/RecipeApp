@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
   
   
-  resources :recipes
+  resources :recipes do 
+get :add_ingredient, on: :member
+  end
   resources :recipe_foods
   resources :foods
   resources :users
