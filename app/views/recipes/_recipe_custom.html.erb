@@ -15,10 +15,6 @@
 
 
 
-<p>
-  <strong> Cooking time:  <%= recipe.cooking_time %> hours</strong>
-</p>
-
 
 <p>
   <strong> Public:
@@ -55,7 +51,8 @@
       </tr>  
       
       <% @foods.each do |food| %>
-        <%= render food %>
+        
+        <%= render partial: 'row_ingredients', locals: {food: food} %>
      <% end %>
            
       </table>  

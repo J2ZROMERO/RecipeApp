@@ -11,18 +11,21 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1 or /recipes/1.json
-#   def show
-    
-# end
-
-def add_ingredient
-    @activo = true
+  def show
+    @activo = params[:activo] == 'true' 
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
-   render partial: 'recipe_custom', locals: {recipe: @recipe}
-
+    @recipe_food = RecipeFood.all
+    render partial: 'recipe', locals: {recipe: @recipe} 
 end
 
+def add_ingredient
+    redirect_to action: "show", activo: 'true'
+end
+
+def add
+
+end
 
   # GET /recipes/new
   def new

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   resources :recipes do 
 get :add_ingredient, on: :member
+post :add, on: :member
   end
   resources :recipe_foods
   resources :foods
