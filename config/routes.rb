@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'users/confirmations', passwords: 'users/passwords',registrations: 'users/registrations', sessions: 'users/sessions' }
 
   devise_scope :user do
-    root to: "users/sessions#new"
     get '/users/sign_out', to: 'devise/sessions#destroy'
     get '/users/password', to: 'users/passwords#create'
   end
   
   
   
+  root to: 'public_recipes#index'
 
   resources :recipes do 
 
@@ -20,7 +20,7 @@ post :delete_ingredient, on: :member
 get :modify, on: :member
 get :general_shoping_list, on: :member
 post :modify_ingredient, on: :member
-
+get :general_shoping_list_total, on: :member
     end
 
 

@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
 
      @current_user = current_user
     @recipes = Recipe.where(user_id: current_user.id)
+    
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -42,9 +43,16 @@ def general_shoping_list
 @recipe_food = RecipeFood.where(recipe_id: params[:id])
 @suma = 0 
 
-  render "recipes/shoping_list"
 
+  render "recipes/shoping_list"
 end
+
+def general_shoping_list_total
+  @recipe_food = RecipeFood.all
+  @suma = 0 
+  
+    render "recipes/shoping_list"
+  end
 
 
 def modify 
