@@ -6,8 +6,7 @@ class RecipesController < ApplicationController
     # return unless user_signed_in?
 
     # @current_user = current_user
-
-    @recipes = Recipe.where(user_id: 4)
+    @recipes = Recipe.where(user_id: 1)
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -16,7 +15,8 @@ class RecipesController < ApplicationController
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
     @recipe_food = RecipeFood.all
-    render partial: 'recipe', locals: {recipe: @recipe} 
+
+    render partial: 'recipe_custom', locals: {recipe: @recipe} 
 end
 
 def add_ingredient
@@ -39,7 +39,7 @@ end
   def create
 
 
-    @recipe = Recipe.new(recipe_params.merge(user_id: 4))
+    @recipe = Recipe.new(recipe_params.merge(user_id: 1))
 
     respond_to do |format|
       if @recipe.save
