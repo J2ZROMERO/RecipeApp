@@ -8,7 +8,7 @@
 //= link user/new
 //= link foods/create
 //= link foods/index
-//= link food/new
+//= link foods/new
 //= link recipe_food/create
 //= link recipe_food/index
 //= link recipe_food/new
