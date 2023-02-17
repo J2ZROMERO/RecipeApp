@@ -2,7 +2,6 @@ class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-  
   # GET /foods or /foods.json
   def index
     @foods = Food.order(params[:sort])
@@ -22,9 +21,11 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
+    return unless user_signed_in?
+
+    @current_user = current_user
     
-    
-    @food = Food.new(food_params)
+    @food = Food.new(food_params.merge(user_id: @current_user.id))
 
     respond_to do |format|
       if @food.save

@@ -19,7 +19,7 @@ gem 'rails-controller-testing'
 gem 'devise'
 
 #cancancan
-gem 'cancancan'
+
 
 # Clean database before execution.
 gem 'database_cleaner'

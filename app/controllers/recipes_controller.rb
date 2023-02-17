@@ -2,14 +2,12 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
-  
-  
   # GET /recipes or /recipes.json
   def index
-    # return unless user_signed_in?
+     return unless user_signed_in?
 
-    # @current_user = current_user
-    @recipes = Recipe.where(user_id: 1)
+     @current_user = current_user
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -91,9 +89,11 @@ def new
 
   # POST /recipes or /recipes.json
   def create
-    
+    return unless user_signed_in?
 
-    @recipe = Recipe.new(recipe_params.merge(user_id: 1))
+    @current_user = current_user
+
+    @recipe = Recipe.new(recipe_params.merge(user_id: @current_user.id))
 
     respond_to do |format|
       if @recipe.save

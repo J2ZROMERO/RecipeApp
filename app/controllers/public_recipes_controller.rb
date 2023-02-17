@@ -1,7 +1,5 @@
 class PublicRecipesController < ActionController::Base
   before_action :authenticate_user!
-
-  
   def index
       @public_recipes = Recipe.all
       @recipes_foods = RecipeFood.all
