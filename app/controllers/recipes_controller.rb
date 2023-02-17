@@ -1,22 +1,86 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
+  load_and_authorize_resource
 
   # GET /recipes or /recipes.json
   def index
     # return unless user_signed_in?
 
     # @current_user = current_user
-
-    @recipes = Recipe.where(user_id: 4)
+    @recipes = Recipe.where(user_id: 1)
   end
 
   # GET /recipes/1 or /recipes/1.json
-#   def show
-    
-# end
+  def show
+    @activo = params[:activo] == 'true' 
+    @foods = Food.all
+    @recipe = Recipe.find(params[:id])
+    @recipe_food = RecipeFood.where(recipe_id: params[:id])
 
-  # GET /recipes/new
-  def new
+    render partial: 'recipe_custom', locals: {recipe: @recipe} 
+end
+
+def add_ingredient
+  
+  
+  redirect_to action: "show", activo: 'true'
+  
+  
+end
+
+def add_ingredient_alone
+  
+  RecipeFood.create(quantity: '1.5', recipe_id: params[:recipe_id], food_id: params[:id])
+  
+  redirect_to action: "show", id: params[:recipe_id], activo: 'true'
+  
+end
+
+
+
+def general_shoping_list
+@recipe_food = RecipeFood.where(recipe_id: params[:id])
+@suma = 0 
+
+  render "recipes/shoping_list"
+
+end
+
+
+def modify 
+  @recipefood = RecipeFood.new
+  @recipeid = params[:recipe_id]
+  @recipe_id = RecipeFood.find_by(id: params[:id])
+  render "recipes/_edit_ingredient"
+
+end
+
+def modify_ingredient
+  
+  @recipefood = RecipeFood.find_by(id: params[:id])
+
+  
+  
+  if @recipefood
+    @recipefood.update(quantity: params[:recipe_food][:quantity])
+    redirect_to recipe_path(params[:recipeid])
+  else
+
+  end
+  
+  
+  
+end
+
+
+
+def delete_ingredient
+RecipeFood.find(params[:id]).destroy
+  redirect_to action: "show", id: params[:recipe_id], activo: 'true'
+end
+
+# GET /recipes/new
+def new
     @recipe = Recipe.new
   end
 
@@ -25,9 +89,9 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
+    
 
-
-    @recipe = Recipe.new(recipe_params.merge(user_id: 4))
+    @recipe = Recipe.new(recipe_params.merge(user_id: 1))
 
     respond_to do |format|
       if @recipe.save
@@ -62,6 +126,12 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+def cancel
+  redirect_to action: "show"
+end
 
   private
 

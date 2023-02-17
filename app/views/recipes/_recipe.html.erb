@@ -4,10 +4,17 @@
     <%= recipe.name %>
   </p>
 
+
   <p>
-    <strong>Description: </strong>
-    <%= recipe.description %>
+    <strong> Preparation time: <%= recipe.preparation_time %> hour</strong>
   </p>
 
-  <%= button_to "Destroy this recipe", recipe, method: :delete %>
-</div>
+  <p>
+  <strong> Cooking time: <%= recipe.cooking_time %> hours</strong>
+</p>
+
+
+
+
+
+<%= button_to "Destroy this recipe", recipe, method: :delete %>

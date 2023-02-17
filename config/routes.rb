@@ -8,7 +8,21 @@ Rails.application.routes.draw do
   end
   
   
-  resources :recipes
+  resources :recipes do 
+
+post :add, on: :member
+get :cancel, on: :member
+get :add_ingredient, on: :member
+post :add_ingredient_alone, on: :member
+post :delete_ingredient, on: :member
+get :modify, on: :member
+get :general_shoping_list, on: :member
+post :modify_ingredient, on: :member
+
+    end
+
+
+
   resources :recipe_foods
   resources :foods
   resources :users
