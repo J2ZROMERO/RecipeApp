@@ -36,7 +36,10 @@ def add_ingredient_alone
 end
 
 def delete_ingredient
-  
+
+RecipeFood.find(params[:id]).destroy
+
+
   redirect_to action: "show", id: params[:recipe_id], activo: 'true'
 end
 # GET /recipes/new

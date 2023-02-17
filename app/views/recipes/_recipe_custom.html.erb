@@ -78,7 +78,7 @@
 </tr>  
 <% @recipe_food.each do |food| %>
         
-  <%= render partial: 'row_ingredients_show', locals: {recipe_food: food} %>
+  <%= render partial: 'row_ingredients_show', locals: {recipe_food: food, recipe_id: recipe} %>
 <% end %>
 
 </table>  

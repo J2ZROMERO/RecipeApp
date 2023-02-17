@@ -14,6 +14,7 @@ post :add, on: :member
 get :cancel, on: :member
 get :add_ingredient, on: :member
 post :add_ingredient_alone, on: :member
+post :delete_ingredient, on: :member
 
     end
 

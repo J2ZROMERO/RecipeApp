@@ -14,7 +14,7 @@
     </td>
     
     <td>    
-     <%= button_to "Remove", delete_ingredient_path(recipe_food), method: :post %>
+     <%= button_to "Remove", delete_ingredient_recipe_path(recipe_food, recipe_id: recipe_id.id), method: :post %>
      
     </td>
   <tr>
