@@ -35,8 +35,10 @@
     <strong>Description: </strong>
     <%= recipe.description %>
   </p>
+  <%= button_to "General shoping list.", general_shoping_list_recipe_path(recipe), method: :get %>
   <%= button_to "Add ingredient", add_ingredient_recipe_path(recipe), method: :get %>
   
+
 <%if @activo == true%>
 <div id="foods_table">
   <table>

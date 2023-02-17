@@ -35,6 +35,15 @@ def add_ingredient_alone
   
 end
 
+
+
+def general_shoping_list
+@recipe_food = RecipeFood.where(recipe_id: params[:id])
+@suma = 0 
+  render "recipes/shoping_list"
+
+end
+
 def delete_ingredient
 
 RecipeFood.find(params[:id]).destroy
