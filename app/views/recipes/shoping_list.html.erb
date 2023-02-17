@@ -5,8 +5,7 @@
  
 
 <% @recipe_food.each do |e| %> 
-    <% @suma += e.food.price %>
-
+    <% @suma += (e.food.price)* e.quantity.to_f %>
 <% end %>
  <%= @suma %>   
  
