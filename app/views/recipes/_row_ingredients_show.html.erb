@@ -1,0 +1,26 @@
+<div>
+  <tr>
+    <td>
+      <%= recipe_food.food.name %>
+    </td>
+    
+
+    <td>
+      <%= recipe_food.quantity %>
+    </td>
+    
+    <td>
+      <%= (recipe_food.quantity.to_f)*recipe_food.food.price %>
+    </td>
+    
+    <td>    
+     
+     <%= link_to "Modify", modify_recipe_path(recipe_food, recipe_id: recipe_id.id) %>
+
+    </td>
+    <td>    
+     <%= button_to "Remove", delete_ingredient_recipe_path(recipe_food, recipe_id: recipe_id.id), method: :post %>
+    </td>
+    
+  <tr>
+</div>

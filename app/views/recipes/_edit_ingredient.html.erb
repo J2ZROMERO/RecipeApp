@@ -1,0 +1,21 @@
+<%= form_with(model: @recipefood, url: modify_ingredient_recipe_path(recipeid: @recipeid)) do |form| %>
+ 
+
+      
+    <div>
+      <%= form.label @recipe_id.food.name, style: "display: block" %>
+      
+    </div>
+  
+    <div>
+      <%= form.label :Quantity, style: "display: block" %>
+      <%= form.number_field :quantity %>
+    </div>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+
+<% end %>
+
+<%= @t %>
