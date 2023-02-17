@@ -27,3 +27,17 @@
 table {
   border: 2px solid black;
 }
+
+.public_recipe {
+  width: 500px;
+  background-color: aqua;
+  border: 2px solid black;
+}
+
+.public_recipe h3 {
+  color: red;
+}
+
+body {
+  background-color: yellow;
+}

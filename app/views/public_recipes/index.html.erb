@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+  
+
+<h1>Public Recipes</h1>
+
+<% @public_recipes.each_with_index do |public_recipes, index| %> <%cuentita = 0%>
+
+  <% if public_recipes.public == true %>
+    
+    <div class="public_recipe">
+    
+      <h3><%= public_recipes.name %></h3>
+      <h4>User Id:<%= public_recipes.user_id%></h4>
+      
+      <h4> Total Items: <%= @recipes_foods.where(recipe_id: public_recipes.id).count %> </h4>
+      
+      <% @recipes_foods.each_with_index do |recipes_foods, index|%>
+    
+        <%if recipes_foods.recipe_id == public_recipes.id && recipes_foods.food_id == recipes_foods.food.id%>
+          <% cuentita += (recipes_foods.quantity*recipes_foods.food.price) %>
+          
+          
+        <%end%>
+        
+
+      <%end%>
+      <h4>cuentita = <%=cuentita%></h4>
+
+      
+      
+      
+    </div>
+  
+  <%end%>
+
+<% end %>
+
+
