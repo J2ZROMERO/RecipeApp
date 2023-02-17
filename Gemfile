@@ -18,9 +18,6 @@ gem 'rails-controller-testing'
 # Authentication.
 gem 'devise'
 
-# cancancan
-
-
 # Clean database before execution.
 gem 'database_cleaner'
 
