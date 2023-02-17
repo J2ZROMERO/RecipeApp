@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[show edit update destroy]
   load_and_authorize_resource
-
+  layout 'application'
   # GET /foods or /foods.json
   def index
     @foods = Food.order(params[:sort])

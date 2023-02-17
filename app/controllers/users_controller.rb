@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   load_and_authorize_resource
+  layout 'application'
 
   # GET /users or /users.json
   def index

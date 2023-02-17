@@ -29,7 +29,11 @@ post :modify_ingredient, on: :member
   resources :foods
   resources :users
   resources :public_recipes
-   
+  authenticated :user do
+    root to: 'public_recipes#index', as: :authenticated_root
+  end
+
+  
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

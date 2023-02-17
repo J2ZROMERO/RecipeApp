@@ -17,7 +17,7 @@
       <% @recipes_foods.each_with_index do |recipes_foods, index|%>
     
         <%if recipes_foods.recipe_id == public_recipes.id && recipes_foods.food_id == recipes_foods.food.id%>
-          <% cuentita += (recipes_foods.quantity*recipes_foods.food.price) %>
+          <% cuentita += (recipes_foods.quantity.to_f*recipes_foods.food.price) %>
           
           
         <%end%>
@@ -36,3 +36,5 @@
 <% end %>
 
 
+asdasd
+<%= @current_user %>

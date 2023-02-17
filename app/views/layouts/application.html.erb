@@ -9,8 +9,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <nav>
+  <ul>
+    <li><%= link_to "Recipes", recipes_path %></li>
+    <li><%= link_to "Public Recipes", foods_path %></li>
+    <li><%= link_to "Foods", foods_path %></li>
+    <li><%= link_to "Shoping list", foods_path %></li>
+  </ul>
+</nav>
+
+
 
   <body>
     <%= yield %>
   </body>
 </html>
+
