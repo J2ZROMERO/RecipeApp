@@ -52,11 +52,12 @@
       
       <% @foods.each do |food| %>
         
-        <%= render partial: 'row_ingredients', locals: {food: food} %>
-     <% end %>
-           
-      </table>  
-      
+        <%= render partial: 'row_ingredients', locals: {food: food, recipe: recipe} %>
+        <% end %>
+        
+        </table>  
+        
+        <%= button_to "Cancel", cancel_recipe_path(recipe), method: :get %>
       </div>
       
 <% else %>
@@ -67,14 +68,18 @@
 <div id="foods_table">
 <table>
 <tr>
-<td><strong>Name</strong></td>
-<td><strong>Measurement Unit</strong></td>
-<td><strong>Price</strong></td>
+<td><strong>Food</strong></td>
 <td><strong>Quantity</strong></td>
-<td><strong>Actions</strong>
+<td><strong>Value</strong></td>
+<td><strong>Actions</strong></td>
+
 
 
 </tr>  
+<% @recipe_food.each do |food| %>
+        
+  <%= render partial: 'row_ingredients_show', locals: {recipe_food: food} %>
+<% end %>
 
 </table>  
 
@@ -84,7 +89,7 @@
 </div>
 
 <%if @activo == true%>
-<%= link_to "Back to recipes", recipes_path %>
 
 <% else %>
 <% end %>
+<%= link_to "Back to recipes", recipes_path %>

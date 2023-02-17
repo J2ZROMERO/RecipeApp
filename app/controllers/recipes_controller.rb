@@ -14,21 +14,33 @@ class RecipesController < ApplicationController
     @activo = params[:activo] == 'true' 
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
-    @recipe_food = RecipeFood.all
+    @recipe_food = RecipeFood.where(recipe_id: params[:id])
 
     render partial: 'recipe_custom', locals: {recipe: @recipe} 
 end
 
 def add_ingredient
-    redirect_to action: "show", activo: 'true'
+  
+  
+  redirect_to action: "show", activo: 'true'
+  
+  
 end
 
-def add
-
+def add_ingredient_alone
+  
+  RecipeFood.create(quantity: '1.5', recipe_id: params[:recipe_id], food_id: params[:id])
+  
+  redirect_to action: "show", id: params[:recipe_id], activo: 'true'
+  
 end
 
-  # GET /recipes/new
-  def new
+def delete_ingredient
+  
+  redirect_to action: "show", id: params[:recipe_id], activo: 'true'
+end
+# GET /recipes/new
+def new
     @recipe = Recipe.new
   end
 
@@ -37,7 +49,7 @@ end
 
   # POST /recipes or /recipes.json
   def create
-
+    
 
     @recipe = Recipe.new(recipe_params.merge(user_id: 1))
 
@@ -74,6 +86,12 @@ end
       format.json { head :no_content }
     end
   end
+
+
+
+def cancel
+  redirect_to action: "show"
+end
 
   private
 

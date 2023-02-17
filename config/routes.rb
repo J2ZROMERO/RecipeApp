@@ -9,9 +9,16 @@ Rails.application.routes.draw do
   
   
   resources :recipes do 
-get :add_ingredient, on: :member
+
 post :add, on: :member
-  end
+get :cancel, on: :member
+get :add_ingredient, on: :member
+post :add_ingredient_alone, on: :member
+
+    end
+
+
+
   resources :recipe_foods
   resources :foods
   resources :users

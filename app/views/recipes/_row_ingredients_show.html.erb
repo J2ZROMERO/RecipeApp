@@ -1,11 +1,21 @@
 <div>
   <tr>
     <td>
-      <%= recipe_food.food.id %>
+      <%= recipe_food.food.name %>
     </td>
-    <td>
     
-     <%= button_to "Add", add_recipe_path(recipe_food), method: :post %>
+
+    <td>
+      <%= recipe_food.quantity %>
+    </td>
+    
+    <td>
+      <%= recipe_food.food.price %>
+    </td>
+    
+    <td>    
+     <%= button_to "Remove", delete_ingredient_path(recipe_food), method: :post %>
+     
     </td>
   <tr>
 </div>
