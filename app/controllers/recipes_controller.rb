@@ -1,8 +1,9 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
-  load_and_authorize_resource
+  before_action :authenticate_user!
+
   
-  layout 'application'
+  
   # GET /recipes or /recipes.json
   def index
     # return unless user_signed_in?
