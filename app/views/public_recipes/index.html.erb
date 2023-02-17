@@ -3,11 +3,24 @@
 
 <h1>Public Recipes</h1>
 
- <% @public_recipes.each do |public_recipes| %>
-   <% if public_recipes.public == true %>
-   <div class="public_recipe">
-     <h3><%= public_recipes.name %></h3>
-     <h4>User Id:<%= public_recipes.user_id%></h4>
-   </div>
-     <%end%>
-  <% end %>
+<% @public_recipes.each do |public_recipes| %> <%cuentita = 0%>
+
+  <% if public_recipes.public == true %>
+    
+    <div class="public_recipe">
+    
+      <h3><%= public_recipes.name %></h3>
+      <h4>User Id:<%= public_recipes.user_id%></h4>
+      
+      <h4> Total Items: <%= @recipes_foods.where(recipe_id: public_recipes.id).count %> </h4>
+      
+   
+      
+      <h4> Total Cost:  <%=  %></h4>
+      <h4></h4>
+    </div>
+  
+  <%end%>
+
+<% end %>
+
