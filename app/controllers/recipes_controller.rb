@@ -40,17 +40,44 @@ end
 def general_shoping_list
 @recipe_food = RecipeFood.where(recipe_id: params[:id])
 @suma = 0 
+
   render "recipes/shoping_list"
 
 end
 
+
+def modify 
+  @recipefood = RecipeFood.new
+  @recipeid = params[:recipe_id]
+  @recipe_id = RecipeFood.find_by(id: params[:id])
+  render "recipes/_edit_ingredient"
+
+end
+
+def modify_ingredient
+  
+  @recipefood = RecipeFood.find_by(id: params[:id])
+
+  
+  
+  if @recipefood
+    @recipefood.update(quantity: params[:recipe_food][:quantity])
+    redirect_to recipe_path(params[:recipeid])
+  else
+
+  end
+  
+  
+  
+end
+
+
+
 def delete_ingredient
-
 RecipeFood.find(params[:id]).destroy
-
-
   redirect_to action: "show", id: params[:recipe_id], activo: 'true'
 end
+
 # GET /recipes/new
 def new
     @recipe = Recipe.new
