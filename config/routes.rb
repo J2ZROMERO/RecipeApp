@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
   
   
+  
+
   resources :recipes do 
 
 post :add, on: :member
@@ -27,9 +29,9 @@ post :modify_ingredient, on: :member
   resources :foods
   resources :users
   resources :public_recipes
+   
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
 end
