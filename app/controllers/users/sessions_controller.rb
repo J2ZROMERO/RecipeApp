@@ -4,7 +4,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    @style = 'user/new'
+    @style = 'public_recipes/index'
     @user = User.new
     @current_user = current_user
   end

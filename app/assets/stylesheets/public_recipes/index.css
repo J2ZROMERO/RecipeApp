@@ -1,3 +1,9 @@
 body {
     
 }
+.nav_bar {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+    
