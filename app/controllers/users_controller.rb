@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
+    @style = 'user/index'
     @users = User.all
   end
 
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @style = 'user/new'
     @user = User.new
   end
 
@@ -21,6 +23,7 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    @style = 'user/create'
     @user = User.new(user_params)
 
     respond_to do |format|

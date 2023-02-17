@@ -6,6 +6,7 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods or /recipe_foods.json
   def index
+    @style = 'recipe_food/index'
     @recipe_foods = RecipeFood.all
   end
 
@@ -14,6 +15,7 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods/new
   def new
+    @style = 'recipe_food/new'
     @recipe_food = RecipeFood.new
   end
 
@@ -22,6 +24,7 @@ class RecipeFoodsController < ApplicationController
 
   # POST /recipe_foods or /recipe_foods.json
   def create
+    @style = 'recipe_food/create'
     @recipe_food = RecipeFood.new(recipe_food_params)
 
     respond_to do |format|

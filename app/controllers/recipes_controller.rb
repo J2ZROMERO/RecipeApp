@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
+    @style = 'recipes/index'
      return unless user_signed_in?
 
      @current_user = current_user
@@ -13,6 +14,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
+    @style = 'recipes/show'
     @activo = params[:activo] == 'true' 
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
@@ -66,20 +68,12 @@ end
 def modify_ingredient
   
   @recipefood = RecipeFood.find_by(id: params[:id])
-
-  
-  
   if @recipefood
     @recipefood.update(quantity: params[:recipe_food][:quantity])
     redirect_to recipe_path(params[:recipeid])
   else
-
   end
-  
-  
-  
 end
-
 
 
 def delete_ingredient
@@ -97,6 +91,7 @@ def new
 
   # POST /recipes or /recipes.json
   def create
+    @style = 'recipes/create'
     return unless user_signed_in?
 
     @current_user = current_user
@@ -136,7 +131,6 @@ def new
       format.json { head :no_content }
     end
   end
-
 
 
 def cancel
