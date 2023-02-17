@@ -1,5 +1,5 @@
 class PublicRecipesController < ActionController::Base
-  load_and_authorize_resource
+  before_action :authenticate_user!
   layout 'application'  
   def index
       @public_recipes = Recipe.all
