@@ -10,8 +10,9 @@ class FoodsController < ApplicationController
   end
 
   # GET /foods/1 or /foods/1.json
-  def show; end
-
+  def show
+  @style = 'foods/show'
+  end
   # GET /foods/new
   def new
     @style = 'foods/new'

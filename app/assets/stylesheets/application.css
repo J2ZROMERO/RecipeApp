@@ -58,6 +58,7 @@ nav{
   text-decoration: none;
 }
 
+
 section {
   background-color:#F3F0D7;
   width: 90%;
@@ -66,4 +67,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cheat {
+    margin-top: 200px;
 }

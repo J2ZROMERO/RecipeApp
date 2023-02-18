@@ -1,5 +1,6 @@
-<h2>Log in</h2>
 
+<section>
+<h2 class="cheat">Log in</h2>
 <%= form_with(model: @user, local: true, url: user_session_path) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -24,3 +25,4 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</section>

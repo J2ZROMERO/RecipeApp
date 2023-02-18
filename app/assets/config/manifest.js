@@ -9,6 +9,7 @@
 //= link foods/create
 //= link foods/index
 //= link foods/new
+//= link foods/show.css
 //= link recipe_food/create
 //= link recipe_food/index
 //= link recipe_food/new
@@ -18,5 +19,7 @@
 //= link recipes/new
 //= link recipes/custom
 //= link shoping/shoping
+//= link registrations/new.css
+//= link passwords/new.css
 
 
