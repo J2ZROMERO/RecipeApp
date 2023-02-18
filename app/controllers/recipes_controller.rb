@@ -53,6 +53,7 @@ def general_shoping_list
 end
 
 def general_shoping_list_total
+  @style = 'shoping/shoping'
   @recipe_food = RecipeFood.all
   @suma = 0 
   
