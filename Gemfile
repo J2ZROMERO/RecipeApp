@@ -64,8 +64,8 @@ group :development, :test do
   # For tests
   # Clean database before execution.
   gem 'database_cleaner'
-  gem 'rspec-rails', '~> 4.0.0'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0'
 end
 
 group :development do
