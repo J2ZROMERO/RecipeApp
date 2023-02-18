@@ -197,8 +197,8 @@ To run the project, execute the following command:
 - If you want to see the tests existing and their definitions please run: " rspec --force-color --format documentation "
 - To check the tests's controllers please execute the next command on your root project console: "" rspec spec/requests/ ""  you will see all the tests' controllers in execution.
 - In order to see Capybara tests you can execute:
-  " rspec spec/interfaces" all the tests.
-  " rspec spec/interfaces/file.rb " single file.
+  " rspec spec/models" all the tests of the models, you can name another directory instead.
+  " rspec spec/model/file.rb " single file.
 ### Deployment
 
 You can deploy this project using:
