@@ -27,7 +27,10 @@ display: flex;
 flex-direction: column;
 margin: 0%;
 padding: 0%;
+align-items: center;
+
 }
+
 
 .nav_bar {
   background-color: aqua;
@@ -37,13 +40,22 @@ padding: 0%;
   position:fixed;
   top: 0px;
   left: 0px;
-  width: 99%;
+  width: 100%;
+  padding: 0;
+}
+
+a {
+  text-decoration: none ;
 }
 
 .nav_bar li {
   padding: 0%;
+  margin-right: 2%;
 }
 
 .nav_bar a {
   margin-left: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: cursive;
 }

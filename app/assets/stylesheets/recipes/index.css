@@ -1,0 +1,35 @@
+@import "../application.css";
+
+div#recipes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    flex-wrap: wrap;
+    
+}
+
+.add_new_recipe {
+    margin-top: 5%;
+}
+.general_recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    
+    border-bottom: 2px solid black;
+    
+}
+
+.button_delete_recipes {
+    margin: 17px 0 7px 0px;   
+}
+.content_recipes {
+    height: 100%;
+    width: 90%;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}

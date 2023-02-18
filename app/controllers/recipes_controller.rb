@@ -83,6 +83,7 @@ end
 
 # GET /recipes/new
 def new
+  @style = 'recipes/new'
     @recipe = Recipe.new
   end
 
@@ -146,6 +147,6 @@ end
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public => false)
   end
 end

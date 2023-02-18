@@ -1,0 +1,10 @@
+@import "../application.css";
+
+body {
+    
+    justify-content: center;
+}
+
+.form_new_recipe {
+    margin-bottom: 10%;
+}
