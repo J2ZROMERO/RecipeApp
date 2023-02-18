@@ -55,7 +55,9 @@ nav{
 .nav_bar a {
   margin-right: 20px;
   color: black;
+  text-decoration: none;
 }
+
 
 section {
   background-color:#F3F0D7;
