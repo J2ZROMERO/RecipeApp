@@ -6,15 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag @style , "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <nav>
-  <ul>
+  <ul class="nav_bar">
     <li><%= link_to "Recipes", recipes_path %></li>
     <li><%= link_to "Public Recipes", public_recipes_path %></li>
     <li><%= link_to "Foods", foods_path %></li>
-    
+    <li><%= link_to "Shopping List", general_shoping_list__total_recipe_path %></li>
     <li><%= link_to "Sing in", new_user_session_path %></li>
     <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
   </ul>

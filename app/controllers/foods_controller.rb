@@ -4,15 +4,18 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
+    @style = 'foods/index'
     @foods = Food.order(params[:sort])
    
   end
 
   # GET /foods/1 or /foods/1.json
-  def show; end
-
+  def show
+  @style = 'foods/show'
+  end
   # GET /foods/new
   def new
+    @style = 'foods/new'
     @food = Food.new
   end
 
@@ -21,6 +24,7 @@ class FoodsController < ApplicationController
 
   # POST /foods or /foods.json
   def create
+    @style = 'foods/create'
     return unless user_signed_in?
 
     @current_user = current_user

@@ -1,9 +1,10 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!
-
+  layout 'application'
   # GET /recipes or /recipes.json
   def index
+    @style = 'recipes/index'
      return unless user_signed_in?
 
      @current_user = current_user
@@ -13,12 +14,15 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
+    @style = 'recipes/index'
     @activo = params[:activo] == 'true' 
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
     @recipe_food = RecipeFood.where(recipe_id: params[:id])
 
-    render partial: 'recipe_custom', locals: {recipe: @recipe} 
+    
+    render partial: 'recipe_custom', locals: { recipe: @recipe }
+
 end
 
 def add_ingredient
@@ -40,6 +44,7 @@ end
 
 
 def general_shoping_list
+  @style = 'shoping/shoping'
 @recipe_food = RecipeFood.where(recipe_id: params[:id])
 @suma = 0 
 
@@ -48,6 +53,7 @@ def general_shoping_list
 end
 
 def general_shoping_list_total
+  @style = 'shoping/shoping'
   @recipe_food = RecipeFood.all
   @suma = 0 
   
@@ -56,6 +62,7 @@ def general_shoping_list_total
 
 
 def modify 
+  @style = 'shoping/modify'
   @recipefood = RecipeFood.new
   @recipeid = params[:recipe_id]
   @recipe_id = RecipeFood.find_by(id: params[:id])
@@ -66,20 +73,12 @@ end
 def modify_ingredient
   
   @recipefood = RecipeFood.find_by(id: params[:id])
-
-  
-  
   if @recipefood
     @recipefood.update(quantity: params[:recipe_food][:quantity])
     redirect_to recipe_path(params[:recipeid])
   else
-
   end
-  
-  
-  
 end
-
 
 
 def delete_ingredient
@@ -89,6 +88,7 @@ end
 
 # GET /recipes/new
 def new
+  @style = 'recipes/new'
     @recipe = Recipe.new
   end
 
@@ -97,6 +97,7 @@ def new
 
   # POST /recipes or /recipes.json
   def create
+    @style = 'recipes/create'
     return unless user_signed_in?
 
     @current_user = current_user
@@ -138,7 +139,6 @@ def new
   end
 
 
-
 def cancel
   redirect_to action: "show"
 end
@@ -152,6 +152,6 @@ end
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public => false)
   end
 end

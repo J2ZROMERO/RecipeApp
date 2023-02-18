@@ -1,4 +1,5 @@
-<div id="<%= dom_id recipe %>">
+
+<div id="<%= dom_id recipe %>" class="recipe general_recipe">
   <p>
     <strong>Recipe: <%= recipe.id %></strong>
     <%= recipe.name %>
@@ -13,8 +14,10 @@
   <strong> Cooking time: <%= recipe.cooking_time %> hours</strong>
 </p>
 
+<%= link_to "Show this recipe", recipe %>
+<%= button_to "Destroy this recipe", recipe, method: :delete , class: "button_delete_recipes"%>
 
 
 
+</div>
 
-<%= button_to "Destroy this recipe", recipe, method: :delete %>
