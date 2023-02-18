@@ -16,11 +16,11 @@
 html {
   width: 100%;
   height: 100%;
-
+  font-family: sans-serif;
 }
 
 body {
-background-color: #FEFBE7;
+background-color:#FED2AA;
 width: 100%;
 height: 100%;
 display: flex;
@@ -29,15 +29,23 @@ margin: 0%;
 padding: 0%;
 }
 
-.nav_bar {
-  background-color: aqua;
+nav{
+  background-color: #CEE5D0;
   display: flex;
-  list-style: none;
   justify-content: flex-end;
   position:fixed;
-  top: 0px;
+  top: -15px;
   left: 0px;
-  width: 99%;
+  width: 100%;
+  height: 7%;
+  align-items: center;
+}
+
+.nav_bar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .nav_bar li {
@@ -45,5 +53,16 @@ padding: 0%;
 }
 
 .nav_bar a {
-  margin-left: 10px;
+  margin-right: 20px;
+  color: black;
+}
+
+section {
+  background-color:#F3F0D7;
+  width: 90%;
+  height: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

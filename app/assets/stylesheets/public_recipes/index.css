@@ -1,2 +1,7 @@
 @import "../application.css";
 
+
+h1 {
+  align-self: flex-start;
+  margin-left: 20px;
+}
