@@ -38,6 +38,9 @@ RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.infer_spec_type_from_file_location!
+  config.include Warden::Test::Helpers
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  
   Capybara.javascript_driver = :webkit
   Capybara.app_host = 'http://localhost:3000'
 
@@ -70,6 +73,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
+    Warden.test_mode!
   end
 
   config.before(:each) do
@@ -78,5 +82,7 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    Warden.test_reset!
+
   end
 end
