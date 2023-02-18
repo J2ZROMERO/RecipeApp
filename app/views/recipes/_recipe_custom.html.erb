@@ -45,13 +45,13 @@
 
 <p>
   <strong> Public:
-   <% @ispublic = recipe.public %>
-   <% if @ispublic == 'true' %>
-   <input type="checkbox"  name="example" id="example" data-toggle="switch" data-on-color="primary" data-off-color="default">
-
-   <% else %>
+   <%= @ispublic = recipe.public %>
+   <% if @ispublic %>
+   
    <input type="checkbox" checked name="example" id="example" data-toggle="switch" data-on-color="primary" data-off-color="default">
-    <% end%>
+   <% else %>
+   <input type="checkbox"  name="example" id="example" data-toggle="switch" data-on-color="primary" data-off-color="default">
+   <% end%>
    
    
    hours</strong>
