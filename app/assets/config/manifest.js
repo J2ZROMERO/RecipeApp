@@ -19,6 +19,7 @@
 //= link recipes/new
 //= link recipes/custom
 //= link shoping/shoping
+//= link shoping/modify
 //= link registrations/new.css
 //= link passwords/new.css
 

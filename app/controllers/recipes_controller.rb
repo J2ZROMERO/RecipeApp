@@ -62,6 +62,7 @@ def general_shoping_list_total
 
 
 def modify 
+  @style = 'shoping/modify'
   @recipefood = RecipeFood.new
   @recipeid = params[:recipe_id]
   @recipe_id = RecipeFood.find_by(id: params[:id])
