@@ -15,5 +15,6 @@
 //= link recipes/create
 //= link recipes/index
 //= link recipes/show
+//= link recipes/new
 
 

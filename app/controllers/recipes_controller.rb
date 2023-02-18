@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[show edit update destroy]
   before_action :authenticate_user!
-
+  layout 'application'
   # GET /recipes or /recipes.json
   def index
     @style = 'recipes/index'
@@ -14,13 +14,15 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    @style = 'recipes/show'
+    @style = 'recipes/index'
     @activo = params[:activo] == 'true' 
     @foods = Food.all
     @recipe = Recipe.find(params[:id])
     @recipe_food = RecipeFood.where(recipe_id: params[:id])
 
-    render partial: 'recipe_custom', locals: {recipe: @recipe} 
+    
+    render partial: 'recipe_custom', locals: { recipe: @recipe }
+
 end
 
 def add_ingredient
@@ -83,6 +85,7 @@ end
 
 # GET /recipes/new
 def new
+  @style = 'recipes/new'
     @recipe = Recipe.new
   end
 
@@ -146,6 +149,6 @@ end
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public => false)
   end
 end
