@@ -16,5 +16,7 @@
 //= link recipes/index
 //= link recipes/show
 //= link recipes/new
+//= link recipes/custom
+//= link shoping/shoping
 
 

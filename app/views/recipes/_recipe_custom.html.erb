@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag @style , "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "recipes/custom" , "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <nav>
@@ -24,8 +24,8 @@
 
 
   <body>
-    
-<div id="<%= dom_id recipe %>">
+    <section>
+<div id="<%= dom_id recipe %>" class="show_recipe">
   <p>
     <strong>Recipe: <%= recipe.id %></strong>
     <%= recipe.name %>
@@ -62,8 +62,8 @@
     <strong>Description: </strong>
     <%= recipe.description %>
   </p>
-  <%= button_to "General shoping list.", general_shoping_list_recipe_path(recipe), method: :get %>
-  <%= button_to "Add ingredient", add_ingredient_recipe_path(recipe), method: :get %>
+  <%= button_to "General shoping list.", general_shoping_list_recipe_path(recipe), method: :get ,class: "button_show" %>
+  <%= button_to "Add ingredient", add_ingredient_recipe_path(recipe), method: :get,class: "button_show" %>
   
 
 <%if @activo == true%>
@@ -95,7 +95,7 @@
 
 
 <div id="foods_table">
-<table>
+<table  class="table_add_ingredient">
 <tr>
 <td><strong>Food  </strong></td>
 <td><strong>Quantity</strong></td>
@@ -121,8 +121,8 @@
 
 <% else %>
 <% end %>
-<%= link_to "Back to recipes", recipes_path %>
-
+<%= link_to "Back to recipes", recipes_path , class: "back_show_recipe"%>
+</section>
   </body>
 </html>
 

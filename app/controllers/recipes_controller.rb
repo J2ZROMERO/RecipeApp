@@ -44,6 +44,7 @@ end
 
 
 def general_shoping_list
+  @style = 'shoping/shoping'
 @recipe_food = RecipeFood.where(recipe_id: params[:id])
 @suma = 0 
 

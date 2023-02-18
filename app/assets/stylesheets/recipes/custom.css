@@ -1,0 +1,17 @@
+@import "../application.css";
+
+.show_recipe {
+    border-bottom: 1px solid black;   
+}
+
+.back_show_recipe {
+margin-top: 5%;
+}
+.button_show {
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+
+.table_add_ingredient {
+    margin-top: 5%;
+}
