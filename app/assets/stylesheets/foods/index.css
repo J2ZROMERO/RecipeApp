@@ -1,16 +1,14 @@
 @import "../application.css";
 
-
-
 .foods_table {
-    width: 50%;
-    background-color: bisque;
-    display: flex;
-    justify-content: center;
+  width: 50%;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
 }
 
 td {
-    margin-right: 100px;
-    width: 150px;
-    padding: auto;
+  margin-right: 100px;
+  width: 150px;
+  padding: 0;
 }
