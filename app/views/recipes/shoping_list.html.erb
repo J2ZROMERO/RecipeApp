@@ -1,0 +1,32 @@
+<section>
+<h1>Shopping List</h1>
+
+<h2>Amount of food items to buy: <%= @recipe_food.count%> </h2>
+<h2>Total value fo food needed:
+ 
+
+<% @recipe_food.each do |e| %> 
+    <% @suma += (e.food.price)* e.quantity.to_f %>
+<% end %>
+ <%= @suma %>   
+ 
+ </h2>
+
+
+ <table>
+ <tr>
+   <td><strong>Food</strong></td>
+   <td><strong>Quantity</strong></td>
+   <td><strong>Price</strong></td>
+   
+  
+   
+   </tr>  
+   
+   <% @recipe_food.each do |food| %>
+     
+     <%= render partial: 'row_shoping_list', locals: {food: food} %>
+     <% end %>
+     
+     </table>  
+     </section>

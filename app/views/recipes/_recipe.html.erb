@@ -1,0 +1,23 @@
+
+<div id="<%= dom_id recipe %>" class="recipe general_recipe">
+  <p>
+    <strong>Recipe: <%= recipe.id %></strong>
+    <%= recipe.name %>
+  </p>
+
+
+  <p>
+    <strong> Preparation time: <%= recipe.preparation_time %> hour</strong>
+  </p>
+
+  <p>
+  <strong> Cooking time: <%= recipe.cooking_time %> hours</strong>
+</p>
+
+<%= link_to "Show this recipe", recipe %>
+<%= button_to "Destroy this recipe", recipe, method: :delete , class: "button_delete_recipes"%>
+
+
+
+</div>
+

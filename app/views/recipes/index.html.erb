@@ -1,0 +1,17 @@
+<section >
+<p style="color: green"><%= notice %></p>
+
+<h1>Recipes</h1>
+
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+    <p>
+      
+      
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New recipe", new_recipe_path, class: 'add_new_recipe' %>
+</section>
